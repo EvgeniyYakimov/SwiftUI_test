@@ -98,8 +98,9 @@ struct AddNewObject: View {
                     }
                     Button {
                         
-                        if (!comment.isEmpty) && (!vModel.myImages.isEmpty) {
+                        if (!comment.isEmpty) || (!vModel.myImages.isEmpty) {
                           shareCD.savePhotoObject(objModel: nil, comment: comment, images: vModel.myImages)
+                          vModel.clear()
                           presentationMode.wrappedValue.dismiss()
                         } else {
                             print("Данные для соранения не заполнены")

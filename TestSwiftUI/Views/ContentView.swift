@@ -26,8 +26,11 @@ struct ContentView: View {
             ScrollView {
                 LazyVGrid(columns: gridLayout, alignment: .leading , spacing: 10) {
                     
+                    
                     ForEach(FotoObjs) { obj in
                         let obj1 = FotoObject(ModelObj: obj)
+                        
+                        
                         
                         NavigationLink (destination: ViewObject( comment: obj1.comment ?? "", ObjFoto: obj1, editingObject: obj)) {
                             

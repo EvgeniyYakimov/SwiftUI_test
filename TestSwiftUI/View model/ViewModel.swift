@@ -39,7 +39,10 @@ class ViewModel: ObservableObject {
     }
     
     func addMyImage(image: UIImage) {
-        myImages.append(image)
-        ObFoto?.image.append(image)
+        let resizeImage = image.resizeImageTo(size: CGSize(width: 150, height: 150))
+        myImages.append(resizeImage!)
+        ObFoto?.image.append(resizeImage!)
     }
+    
+    
 }
